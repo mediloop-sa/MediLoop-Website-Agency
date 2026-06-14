@@ -245,6 +245,89 @@ body, html {
     letter-spacing: 0.5px;
 }
 
+/* --- THE ECOSYSTEM SECTION --- */
+.ecosystem-section {
+    padding: 120px 20px;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+/* Subtle magenta background glow behind the grid */
+.ecosystem-section::before {
+    content: '';
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.05) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+.ecosystem-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.ecosystem-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+.ecosystem-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 15px 0;
+}
+.ecosystem-header p {
+    color: #9CA3AF;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* The 3-Column Tech Grid */
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.eco-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+.eco-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(139, 92, 246, 0.4); /* Violet border on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+.eco-icon {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    background: -webkit-linear-gradient(90deg, #8B5CF6, #D946EF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.eco-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: #FFFFFF;
+}
+.eco-card p {
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     .agency-nav { padding: 15px; }
@@ -256,4 +339,5 @@ body, html {
     .preview-overlay { opacity: 1; background: rgba(5, 5, 5, 0.5); } /* Always show button on mobile */
     .showroom-features { gap: 10px; }
     .feature-tag { padding: 8px 15px; font-size: 0.75rem; }
+    .ecosystem-grid { grid-template-columns: 1fr; gap: 20px; }
 }
