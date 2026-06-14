@@ -1,0 +1,149 @@
+/* =========================================
+   MEDILOOP WEBSITES - AGENCY STYLES
+   ========================================= */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0A0A0A; /* Deep tech black */
+    color: #F3F4F6;
+    scroll-behavior: smooth;
+}
+
+/* --- NAVIGATION --- */
+.agency-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+.nav-logo {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.logo-bold { font-weight: 800; color: #FFFFFF; }
+.logo-light { font-weight: 300; color: #9CA3AF; }
+
+.nav-links a {
+    color: #D1D5DB;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: #FFFFFF; }
+
+.btn-nav {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px; /* Slightly sharper corners for a tech feel */
+}
+.btn-nav:hover { background: #FFFFFF; color: #0A0A0A !important; }
+
+/* --- HERO SECTION --- */
+.agency-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    overflow: hidden;
+}
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #9CA3AF;
+    margin-bottom: 30px;
+}
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 25px 0;
+    letter-spacing: -1px;
+}
+.highlight {
+    color: transparent;
+    background-image: linear-gradient(90deg, #FFFFFF, #6B7280); /* Sleek silver/white gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #9CA3AF;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn-primary {
+    background: #FFFFFF;
+    color: #0A0A0A;
+    text-decoration: none;
+    padding: 16px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+.btn-primary:hover { transform: translateY(-3px); }
+
+.btn-secondary {
+    background: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Background Glow Effect */
+.hero-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    z-index: 1;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .agency-nav { padding: 15px; }
+    .nav-links a { display: none; } /* Hides desktop links on mobile for now */
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-actions { flex-direction: column; }
+}
