@@ -6,9 +6,10 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #0A0A0A; /* Deep tech black */
+    background-color: #050505; /* Extremely dark, sleek background */
     color: #F3F4F6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* --- NAVIGATION --- */
@@ -20,9 +21,9 @@ body, html {
     align-items: center;
     padding: 20px 50px;
     box-sizing: border-box;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
 }
@@ -46,9 +47,10 @@ body, html {
 .btn-nav {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
-    border-radius: 8px; /* Slightly sharper corners for a tech feel */
+    border-radius: 8px;
+    transition: all 0.3s;
 }
-.btn-nav:hover { background: #FFFFFF; color: #0A0A0A !important; }
+.btn-nav:hover { background: #FFFFFF; color: #050505 !important; }
 
 /* --- HERO SECTION --- */
 .agency-hero {
@@ -59,7 +61,6 @@ body, html {
     text-align: center;
     position: relative;
     padding: 0 20px;
-    overflow: hidden;
 }
 .hero-container {
     position: relative;
@@ -70,12 +71,12 @@ body, html {
     display: inline-block;
     padding: 8px 16px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3); /* Subtle violet border */
     border-radius: 50px;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #9CA3AF;
+    color: #E5E7EB;
     margin-bottom: 30px;
 }
 .hero-title {
@@ -85,9 +86,10 @@ body, html {
     margin: 0 0 25px 0;
     letter-spacing: -1px;
 }
+/* Deep Violet to Magenta Gradient */
 .highlight {
     color: transparent;
-    background-image: linear-gradient(90deg, #FFFFFF, #6B7280); /* Sleek silver/white gradient */
+    background-image: linear-gradient(90deg, #8B5CF6, #D946EF); 
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -104,19 +106,26 @@ body, html {
     justify-content: center;
     gap: 20px;
 }
+/* Software Brand Button */
 .btn-primary {
-    background: #FFFFFF;
-    color: #0A0A0A;
+    display: inline-block;
+    background: linear-gradient(90deg, #8B5CF6, #D946EF);
+    color: #FFFFFF;
     text-decoration: none;
     padding: 16px 35px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 1rem;
-    transition: transform 0.3s;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
-.btn-primary:hover { transform: translateY(-3px); }
-
+.btn-primary:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(217, 70, 239, 0.3); 
+}
 .btn-secondary {
+    display: inline-block;
     background: transparent;
     color: #FFFFFF;
     text-decoration: none;
@@ -129,21 +138,122 @@ body, html {
 }
 .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* Background Glow Effect */
+/* Violet Tech Glow */
 .hero-glow {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
     z-index: 1;
 }
 
-/* --- MOBILE --- */
+/* --- THE SHOWROOM SECTION --- */
+.showroom-section {
+    padding: 100px 20px 140px 20px;
+    background-color: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.showroom-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.showroom-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 15px 0;
+}
+.showroom-header p {
+    color: #9CA3AF;
+    font-size: 1.1rem;
+    margin: 0 auto 50px auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Browser Mockup styling for the portfolio piece */
+.browser-mockup {
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.1);
+    position: relative;
+}
+.browser-top {
+    background: #1A1A1A;
+    padding: 15px 20px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+}
+.dot.red { background-color: #FF5F56; }
+.dot.yellow { background-color: #FFBD2E; }
+.dot.green { background-color: #27C93F; }
+
+.browser-content {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Gives a good preview window size */
+}
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Ensures the top of the spa template shows */
+    transition: filter 0.4s;
+}
+.preview-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.browser-content:hover .preview-img {
+    filter: blur(3px);
+}
+.browser-content:hover .preview-overlay {
+    opacity: 1;
+}
+
+/* Tech Features below the mockup */
+.showroom-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+}
+.feature-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: #D1D5DB;
+    letter-spacing: 0.5px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     .agency-nav { padding: 15px; }
-    .nav-links a { display: none; } /* Hides desktop links on mobile for now */
+    .nav-links { display: none; } /* Kept hidden on mobile for clean look */
     .hero-title { font-size: 2.5rem; }
     .hero-subtitle { font-size: 1rem; }
     .hero-actions { flex-direction: column; }
+    .browser-content { height: 300px; }
+    .preview-overlay { opacity: 1; background: rgba(5, 5, 5, 0.5); } /* Always show button on mobile */
+    .showroom-features { gap: 10px; }
+    .feature-tag { padding: 8px 15px; font-size: 0.75rem; }
 }
